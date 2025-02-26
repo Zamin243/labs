@@ -1,0 +1,11 @@
+import numpy as np
+b_values=np.arange(-8, 4.5, 0.5)
+def calculate_y(a, b):
+   if a**2+b> 3:
+      return a+ b
+   else:
+      return 2*a-b
+a=2
+results=[(b, calculate_y(a, b)) for b in b_values]
+for b, y in results: 
+   print(b, y)
