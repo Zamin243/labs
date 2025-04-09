@@ -1,0 +1,11 @@
+def ededi_ortani_hesabla(C):
+    selected_elements = [x for x in C if x % 3 == 2]
+    if not selected_elements:
+        return None
+    mean = sum(selected_elements) / len(selected_elements)
+    return mean
+mean_value = ededi_ortani_hesabla(C)
+if mean_value is not None:
+    print("{mean_value}")
+else:
+    print("Ededi orta yoxdur.")
