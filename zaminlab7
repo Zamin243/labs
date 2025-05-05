@@ -1,0 +1,18 @@
+Create a file based on a numeric array. By reading the file, write the numbers that are not divisible by 3 into a new file and additionally calculate their average.
+
+numbers = [5, 9, 12, 7, 20, 18, 25, 3, 10]
+with open("numbers.txt", "w") as file:
+    for num in numbers:
+        file.write(str(num) + "\n")
+with open("numbers.txt", "r") as file:
+    all_numbers = [int(line.strip()) for line in file]
+not_div_3 = [num for num in all_numbers if num % 3 != 0]
+with open("not_divisible_by_3.txt", "w") as file:
+    for num in not_div_3:
+        file.write(str(num) + "\n")
+if not_div_3:
+    average = sum(not_div_3) / len(not_div_3)
+    print("Numbers not divisible by 3:", not_div_3)
+    print("Average:", average)
+else:
+    print("No numbers found that are not divisible by 3.")
