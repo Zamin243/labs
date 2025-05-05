@@ -1,0 +1,16 @@
+From a two-dimensional array A(n, m), a one-dimensional array B should be constructed such that each element of array B is equal to the sum of the corresponding column elements of array A.
+
+
+n = int(input())
+m = int(input())
+A = []
+for i in range(n):
+    row = list(map(int, input().split()))
+    A.append(row)
+B = []
+for j in range(m):
+    sum_column = 0
+    for i in range(n):
+        sum_column += A[i][j]
+    B.append(sum_column)
+print(B)
