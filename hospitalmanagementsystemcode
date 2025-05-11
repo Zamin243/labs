@@ -1,0 +1,29 @@
+import heapq
+
+class Patient:
+def **init**(self, name, severity):
+self.name = name
+self.severity = severity  
+
+```
+def __lt__(self, other):
+    return self.severity < other.severity  
+```
+
+class HospitalQueue:
+def **init**(self):
+self.pq = \[] 
+
+```
+def add_patient(self, name, severity):
+    patient = Patient(name, severity)
+    heapq.heappush(self.pq, patient)
+    print(f"Patient {name} added with severity {severity}")
+
+def treat_patient(self):
+    if self.pq:
+        patient = heapq.heappop(self.pq)
+        print(f"Treating patient: {patient.name} (Severity: {patient.severity})")
+    else:
+        print("No patients in the queue.")
+
