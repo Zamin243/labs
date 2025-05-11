@@ -1,0 +1,8 @@
+from scipy.optimize import bisect
+from numpy import log
+
+def f(x):
+    return x**2 + log(x) - 4
+
+root = bisect(f, 1.0, 2.0)
+print(root)
